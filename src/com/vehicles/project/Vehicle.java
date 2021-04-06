@@ -10,7 +10,7 @@ public abstract class Vehicle {
 	protected String color;
 	protected List<Wheel> wheels = new ArrayList<Wheel>();
 
-	public Vehicle(String plate, String brand, String color) {
+	public Vehicle(String plate, String brand, String color) throws Exception {
 		this.plate = plate;
 		this.brand = brand;
 		this.color = color;
