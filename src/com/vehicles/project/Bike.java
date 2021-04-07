@@ -9,7 +9,7 @@ public class Bike extends Vehicle {
 		this.wheels = wheels;
 	}
 
-	public String info_car() {
+	public String info_bike() {
 		
 		return "Marca del Moto: " +brand+ " Matricula: " +plate+ " Color: " +color+ " Ruedas: " +wheels;
 	}

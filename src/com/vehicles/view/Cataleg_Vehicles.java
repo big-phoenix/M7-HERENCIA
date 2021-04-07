@@ -1,48 +1,25 @@
 package com.vehicles.view;
 
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-
-import com.vehicles.control.VehiclesControl;
+import com.vehicles.control.PersonaControl;
+import com.vehicles.persona.Llicencia;
 
 public class Cataleg_Vehicles {
 	
-	public static VehiclesControl vehicle = new VehiclesControl();
+	private static PersonaControl titular= new PersonaControl();
+	private static PersonaControl conductor= new PersonaControl();
 	
 
 	public static void main(String[] args) {
 		
-		String[] vehiculos = {
-	            "Coche",
-	            "Moto"
-	        };
-		
-			ImageIcon icono = new ImageIcon("img/icon.png");
-	        String tipo = (String) JOptionPane.showInputDialog(null, 
-	        		"Seleccione el tipo de Vehiculo", "Vehiculo", JOptionPane.DEFAULT_OPTION, 
-	        		icono, vehiculos, vehiculos[0]);
-		
-		switch(tipo) {
-		
-			case "Coche":
-				try {
-					vehicle.crearCoche();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			break;
+			Llicencia llicencia = new Llicencia(00001, "Coche", "Pepe", 2000, 05, 21);
 			
-			case "Moto":
-				try {
-					vehicle.crearMoto();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			break;
-		
-		}
+			try {
+				titular.crearTitular("Pepe", "Martinez", 2021, 02, 15, llicencia, true, false);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 	}
 
